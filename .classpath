@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JDBC"/>
+	<classpathentry kind="lib" path="__MACOSX/JDBC/._ojdbc6.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/homes/zhou267/cs348/JDBC/ojdbc6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
