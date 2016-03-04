@@ -6,3 +6,7 @@ drop table Course cascade constraints;
 drop table Users cascade constraints;
 drop table Department cascade constraints;
 drop table Evaluation cascade constraints;
+drop sequence course_sequence;
+drop sequence users_sequence;
+drop sequence dept_sequence;
+drop sequence eval_sequence;

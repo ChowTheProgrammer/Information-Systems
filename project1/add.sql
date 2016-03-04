@@ -9,18 +9,29 @@ create table Course(
     PRIMARY KEY     (course_id));
 
 
+create sequence course_sequence start with 100
+increment by 1
+minvalue 100
+maxvalue 10000;
+
+
 create table Users(
-    user_id   integer NOT NULL,
+    user_id         integer NOT NULL,
     user_name       varchar(30),
     user_type       varchar(10),
     PRIMARY KEY     (user_id));
 
 
+create sequence users_sequence start with 1000
+increment by 1
+minvalue 1000
+maxvalue 10000;
+
+
 create table Department(
-    dept_id         integer NOT NULL,
-    dept_name       varchar(30),
+    dept_name       varchar(30) NOT NULL,
     dept_head_name  varchar(30),
-    PRIMARY KEY     (dept_id));
+    PRIMARY KEY     (dept_name));
 
 
 create table Evaluation(
@@ -32,9 +43,15 @@ create table Evaluation(
     PRIMARY KEY     (eval_id));
 
 
+create sequence eval_sequence start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+
+
 create table Enroll(
     course_id       integer NOT NULL,
-    student_id         integer NOT NULL,
+    student_id      integer NOT NULL,
     PRIMARY KEY     (course_id, student_id),
     FOREIGN KEY     (course_id) REFERENCES Course (course_id)
     ON DELETE CASCADE,
@@ -43,10 +60,10 @@ create table Enroll(
 
 
 create table Roster(
-    dept_id         integer NOT NULL,
+    dept_name       varchar(30) NOT NULL,
     faculty_id      integer NOT NULL,
-    PRIMARY KEY     (dept_id, faculty_id),
-    FOREIGN KEY     (dept_id) REFERENCES Department (dept_id)
+    PRIMARY KEY     (dept_name, faculty_id),
+    FOREIGN KEY     (dept_name) REFERENCES Department (dept_name)
     ON DELETE CASCADE,
     FOREIGN KEY     (faculty_id) REFERENCES Users (user_id)
     ON DELETE CASCADE);
